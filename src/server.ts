@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { errorHandler, notFound } from "./middlewares/errorMiddleware";
 import userRouter from "./routes/userRoutes";
 import connectToDB from "./db/connect";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ const app = express();
 // setup middlewares
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
 // routes
 app.use("/api/v1/user", userRouter);
