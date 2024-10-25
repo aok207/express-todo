@@ -24,8 +24,6 @@ export async function authOnly(
 
     decoded = decoded as UserData;
 
-    console.log(decoded);
-
     req.user = decoded;
 
     next();

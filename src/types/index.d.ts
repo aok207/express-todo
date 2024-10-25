@@ -10,6 +10,15 @@ export interface IUser {
   updatedAt: Date;
 }
 
+export interface ITodo {
+  _id: Types.ObjectId;
+  task: string;
+  userId: Types.ObjectId;
+  isCompleted: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface UserData {
   _id: Types.ObjectId;
   username: string;

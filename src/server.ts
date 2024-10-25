@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { errorHandler, notFound } from "./middlewares/errorMiddleware";
 import userRouter from "./routes/userRoutes";
+import todoRouter from "./routes/todoRoutes";
 import connectToDB from "./db/connect";
 import cookieParser from "cookie-parser";
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 
 // routes
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/todos", todoRouter);
 
 app.use(notFound);
 app.use(errorHandler);
